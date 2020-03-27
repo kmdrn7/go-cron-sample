@@ -1,7 +1,7 @@
 package main
 
 import (
-  "fmt"
+  "log"
   "time"
   cron "github.com/robfig/cron/v3"
 )
@@ -13,7 +13,7 @@ func main() {
 
   // simply print current time every second
   c.AddFunc("* * * * * *", func() {
-    fmt.Println(time.Now())
+    log.Print(time.Now())
   })
 
   // use cron.Run to run this cron within current goroutine
